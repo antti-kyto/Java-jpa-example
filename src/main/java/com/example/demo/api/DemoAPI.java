@@ -14,7 +14,6 @@ public class DemoAPI {
 
     @GetMapping("/")
     public String index(){
-        playerController.ListAllPlayers();
-        return "Hello Spring Boot!";
+        return playerController.listAllPlayers();
     }
 }

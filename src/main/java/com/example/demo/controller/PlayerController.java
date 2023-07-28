@@ -12,12 +12,14 @@ public class PlayerController {
     @Autowired
     private PlayerRepository playerRepository;
 
-    public String ListAllPlayers()
+    public String listAllPlayers()
     {
+        StringBuilder returnValue = new StringBuilder();
         List<Player> listPlayers = playerRepository.findAll();
+
         for (Player player : listPlayers){
-            System.out.println(player.name);
+            returnValue.append(player.getName());
         }
-        return "listPlayers";
+        return returnValue.toString();
     }
 }
